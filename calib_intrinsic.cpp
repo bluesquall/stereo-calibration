@@ -20,11 +20,11 @@ Mat img, gray;
 Size im_size;
 
 bool doesExist (const std::string& name) {
-  struct stat buffer;   
-  return (stat (name.c_str(), &buffer) == 0); 
+  struct stat buffer;
+  return (stat (name.c_str(), &buffer) == 0);
 }
 
-void setup_calibration(int board_width, int board_height, int num_imgs, 
+void setup_calibration(int board_width, int board_height, int num_imgs,
                        float square_size, char* imgs_directory, char* imgs_filename,
                        char* extension) {
   Size board_size = Size(board_width, board_height);
@@ -47,7 +47,7 @@ void setup_calibration(int board_width, int board_height, int num_imgs,
                    TermCriteria(TermCriteria::COUNT + TermCriteria::EPS, 30, 0.1));
       drawChessboardCorners(gray, board_size, corners, found);
     }
-    
+
     vector< Point3f > obj;
     for (int i = 0; i < board_height; i++)
       for (int j = 0; j < board_width; j++)

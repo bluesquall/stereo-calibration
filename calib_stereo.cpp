@@ -43,7 +43,7 @@ void load_image_points(int board_width, int board_height, int num_imgs, float sq
       cout << "Chessboard find error!" << endl;
       cout << "leftImg: " << left_img << " and rightImg: " << right_img <<endl;
       continue;
-    } 
+    }
 
     if (found1)
     {
@@ -127,9 +127,9 @@ int main(int argc, char const *argv[])
   fsr["D"] >> D2;
   int flag = 0;
   flag |= CALIB_FIX_INTRINSIC;
-  
+
   cout << "Read intrinsics" << endl;
-  
+
   stereoCalibrate(object_points, left_img_points, right_img_points, K1, D1, K2, D2, img1.size(), R, T, E, F);
 
   cv::FileStorage fs1(out_file, cv::FileStorage::WRITE);
@@ -141,7 +141,7 @@ int main(int argc, char const *argv[])
   fs1 << "T" << T;
   fs1 << "E" << E;
   fs1 << "F" << F;
-  
+
   printf("Done Calibration\n");
 
   printf("Starting Rectification\n");
