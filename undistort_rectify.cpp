@@ -1,7 +1,7 @@
-#include <opencv2/core/core.hpp>
-#include <opencv2/calib3d/calib3d.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/calib3d.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 #include <stdio.h>
 #include <iostream>
 #include "popt_pp.h"
@@ -35,8 +35,8 @@ int main(int argc, char const *argv[])
   Mat K1, K2, R;
   Vec3d T;
   Mat D1, D2;
-  Mat img1 = imread(leftimg_filename, CV_LOAD_IMAGE_COLOR);
-  Mat img2 = imread(rightimg_filename, CV_LOAD_IMAGE_COLOR);
+  Mat img1 = imread(leftimg_filename, IMREAD_COLOR);
+  Mat img2 = imread(rightimg_filename, IMREAD_COLOR);
 
   cv::FileStorage fs1(calib_file, cv::FileStorage::READ);
   fs1["K1"] >> K1;
